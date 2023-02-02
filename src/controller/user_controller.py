@@ -1,7 +1,6 @@
-from ..usecase.user_usecase import UserUsecase
-from ..infrastructure.schemas.user_schema import UserRequestSchema as RequestSchema
-from ..infrastructure.schemas.user_schema import UserResponseSchema as ResponseSchema
-
+from usecase.user_usecase import UserUsecase
+from infrastructure.schemas.user_schema import UserRequestSchema as RequestSchema
+from infrastructure.schemas.user_schema import UserResponseSchema as ResponseSchema
 
 class UserController:
     def __init__(self, user_usecase):
