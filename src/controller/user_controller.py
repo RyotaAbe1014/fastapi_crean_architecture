@@ -1,4 +1,4 @@
-from usecase.user_usecase import UserUsecase
+from usecase.user_usecase import UserCreateInteractor as UserUsecase
 from infrastructure.schemas.user_schema import UserRequestSchema as RequestSchema
 from infrastructure.schemas.user_schema import UserResponseSchema as ResponseSchema
 

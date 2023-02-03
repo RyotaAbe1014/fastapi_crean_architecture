@@ -2,15 +2,15 @@ from fastapi import APIRouter, Depends, HTTPException
 from ..schemas.user_schema import UserRequestSchema as RequestSchema
 from ..schemas.user_schema import UserResponseSchema as ResponseSchema
 from controller.user_controller import UserController
-from usecase.user_usecase import UserUsecase
+from usecase.user_usecase import UserCreateInteractor as UserUsecase
 from ..repositories.user_repository import UserRepository
 from infrastructure.databases.db import session
 
 router = APIRouter(prefix="/users", tags=["users"])
 
 
-@router.post("/")
-async def create_user(input: RequestSchema)-> ResponseSchema:
+@router.post("/", response_model=ResponseSchema)
+async def create_user(input: RequestSchema):
     user_repository = UserRepository(session)
     user_usecase = UserUsecase(user_repository)
     user_controller = UserController(user_usecase)
