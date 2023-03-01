@@ -7,4 +7,4 @@ class UserController:
         self.user_usecase = user_usecase
 
     def create_user(self, user: RequestSchema) -> ResponseSchema:
-        return self.user_usecase.create_user(user)
+        return self.user_usecase.create_user(user) 

@@ -14,5 +14,4 @@ async def create_user(input: RequestSchema):
     user_repository = UserRepository(session)
     user_usecase = UserUsecase(user_repository)
     user_controller = UserController(user_usecase)
-    return user_controller.create_user(input)
-    
+    return user_controller.create_user(input) 
